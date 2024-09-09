@@ -1,0 +1,76 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --max-width: 1920px;
+  --navbar-height: 80px;
+  --sidebar-width: 300px;
+
+  --destructive: #d50000;
+  --background: #ffffff;
+  --font-color: #003049;
+  --theme-color: #ef6c00;
+  --theme-variant: #fff3e0;
+  --color-mute: #9d9d9d;
+  --color-shade: #ebe4e4;
+  --color-accent: #f5fbfd;
+
+  --radius: 0.3rem;
+  --gap: 0.5rem;
+  --padding: 1rem;
+  --margin: 0.7rem;
+
+  --font-xl: calc(22px + 6 * (100vw - 320px) / 1600);
+  --font-md: 1.2rem;
+  --font: 1rem;
+  --font-sm: 0.775rem;
+
+  --font-light: 500;
+  --font-bold: 700;
+
+  --transition: 0.3s ease-in-out;
+  --shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+  --shadow-active: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+
+@layer base {
+  body {
+    @apply bg-background text-font text-base font-normal scroll-smooth;
+  }
+
+  a {
+    @apply text-inherit no-underline;
+  }
+
+  ul,
+  li {
+    @apply list-none;
+  }
+
+  ::-webkit-scrollbar {
+    background-color: var(--theme-variant);
+    width: 10px;
+    height: 0.5rem;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background-color: var(--theme-color);
+    border-radius: var(--radius);
+  }
+}
+
+@layer components {
+  .button {
+    @apply rounded-md flex items-center gap-2 leading-none border-[1px] border-transparent p-3 capitalize outline-0 text-base font-normal cursor-pointer select-none transition-all duration-300;
+  }
+
+  .no-scrollbar {
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+  }
+}
+
+:focus {
+  outline: none;
+}
